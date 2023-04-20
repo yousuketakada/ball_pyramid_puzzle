@@ -19,10 +19,12 @@
 
 #include <array>
 #include <compare>
+#include <functional>
 #include <iostream>
 #include <map>
 #include <ranges>
 #include <string>
+#include <utility>
 #include <vector>
 
 struct Coord
@@ -44,9 +46,15 @@ struct Coord
 class Puzzle
 {
 public:
-    int solve()
+    using Balls = std::array<char, 20>;
+    using OnSolution = std::function<void(const Balls&)>;
+
+    explicit Puzzle(OnSolution on_solution) : on_solution{std::move(on_solution)}
+    {}
+
+    void solve()
     {
-        return solve(std::begin(pieces));
+        solve(std::begin(pieces));
     }
 
 private:
@@ -223,14 +231,12 @@ private:
         },
     };
 
-    int solve(std::vector<Piece>::const_iterator cur_piece)
+    void solve(std::vector<Piece>::const_iterator cur_piece)
     {
         if (cur_piece == std::end(pieces)) {
-            show();
-            return 1;
+            on_solution(balls);
+            return;
         }
-
-        int num_solutions = 0;
 
         for (const auto& variant : cur_piece->variants) {
             // We shall place 'L' only in the first set of parallel planes; see above.
@@ -241,15 +247,13 @@ private:
                     for (const auto& pos : std::views::keys(plane)) {
                         if (can_put(variant, plane, pos)) {
                             put(cur_piece->symbol, variant, plane, pos);
-                            num_solutions += solve(cur_piece + 1);
+                            solve(cur_piece + 1);
                             unput(variant, plane, pos);
                         }
                     }
                 }
             }
         }
-
-        return num_solutions;
     }
 
     bool can_put(const Shape& shape, const Plane& plane, const Coord& pos) const
@@ -279,9 +283,13 @@ private:
         put('\0', shape, plane, pos);
     }
 
-    void show() const
-    {
-        std::string str = R"(
+    Balls balls{};
+    OnSolution on_solution{};
+};
+
+std::string balls_to_string(const Puzzle::Balls& balls)
+{
+    std::string str = R"(
       (0)
       / \               (1)
     (0)-(0)             / \           (2)
@@ -291,22 +299,28 @@ private:
 (0)-(0)-(0)-(0)
 )";
 
-        auto cur_ball = std::begin(balls);
+    auto cur_ball = std::begin(balls);
 
-        for (const auto c : {'0', '1', '2', '3'}) {
-            for (std::size_t i = 0; (i = str.find(c, i)) != std::string::npos; ++i) {
-                str[i] = *cur_ball++;
-            }
+    for (const auto c : {'0', '1', '2', '3'}) {
+        for (std::size_t i = 0; (i = str.find(c, i)) != std::string::npos; ++i) {
+            str[i] = *cur_ball++;
         }
-
-        std::cout << str << "\n";
     }
 
-    std::array<char, 20> balls{};
-};
+    return str;
+}
 
 int main()
 {
-    Puzzle puzzle;
-    std::cout << puzzle.solve() << " solutions found.\n";
+    int num_solutions = 0;
+
+    Puzzle puzzle{[&](const Puzzle::Balls& balls)
+    {
+        std::cout << num_solutions++ << "-th solution:\n";
+        std::cout << balls_to_string(balls) << "\n";
+    }};
+
+    puzzle.solve();
+
+    std::cout << num_solutions << " solutions found.\n";
 }
