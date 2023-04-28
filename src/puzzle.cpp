@@ -293,7 +293,7 @@ private:
     OnSolutionCallback on_solution_callback{};
 };
 
-std::string balls_to_string(const Puzzle::Balls& balls)
+std::string format_as_pyramid(const Puzzle::Balls& balls)
 {
     std::string str = R"(
       (0)
@@ -320,10 +320,10 @@ int main()
 {
     int num_solutions = 0;
 
-    Puzzle puzzle{[&](const Puzzle::Balls& balls)
+    Puzzle puzzle{[&](const auto& balls)
     {
-        std::cout << num_solutions++ << "-th solution:\n";
-        std::cout << balls_to_string(balls) << "\n";
+        std::cout << "Solution #" << num_solutions++ << ":\n";
+        std::cout << format_as_pyramid(balls) << "\n";
     }};
 
     puzzle.solve();
