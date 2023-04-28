@@ -124,8 +124,8 @@ private:
                     { 1,  0}, { 1,  1},
                 },
                 {
-                              { 0,  0},
-                    { 1, -1}, { 1,  0},
+                              {-1,  1},
+                    { 0,  0}, { 0,  1},
                 },
                 {
                     { 0,  0}, { 0,  1},
@@ -322,8 +322,8 @@ int main()
 
     Puzzle puzzle{[&](const auto& balls)
     {
-        std::cout << "Solution #" << num_solutions++ << ":\n";
-        std::cout << format_as_pyramid(balls) << "\n";
+        std::cout << "Solution #" << num_solutions++ << ":\n"
+                  << format_as_pyramid(balls) << "\n";
     }};
 
     puzzle.solve();
