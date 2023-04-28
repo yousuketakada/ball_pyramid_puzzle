@@ -47,9 +47,10 @@ class Puzzle
 {
 public:
     using Balls = std::array<char, 20>;
-    using OnSolution = std::function<void(const Balls&)>;
+    using OnSolutionCallback = std::function<void(const Balls&)>;
 
-    explicit Puzzle(OnSolution on_solution) : on_solution{std::move(on_solution)}
+    explicit Puzzle(OnSolutionCallback on_solution_callback) :
+        on_solution_callback{std::move(on_solution_callback)}
     {}
 
     void solve()
@@ -234,7 +235,7 @@ private:
     void solve(std::vector<Piece>::const_iterator cur_piece)
     {
         if (cur_piece == std::end(pieces)) {
-            on_solution(balls);
+            on_solution();
             return;
         }
 
@@ -283,8 +284,13 @@ private:
         put('\0', shape, plane, pos);
     }
 
+    void on_solution() const
+    {
+        on_solution_callback(balls);
+    }
+
     Balls balls{};
-    OnSolution on_solution{};
+    OnSolutionCallback on_solution_callback{};
 };
 
 std::string balls_to_string(const Puzzle::Balls& balls)
