@@ -1,5 +1,8 @@
-// 20-Ball Pyramid Puzzle Solver
+// 20-Ball Pyramid Puzzle Solver in C++20
 //
+// TODO: Write some short description of the problem and
+// the strategy for solution that helps renders understand the code.
+// 
 // We shall fix the orientation of an asymmetric piece called 'L' and
 // try to place it only in the first set of parallel square lattice planes
 // so that solutions thus obtained are unique up to rotation and reflection.
@@ -15,7 +18,8 @@
 //    / \ / \ / \        o---o---o      17  18
 //   6---7---8---9      13  14  15
 //
-//      Bottom              2nd           3rd       Top
+//       0-th               1st           2nd       3rd
+//      (Base)                                     (Top)
 
 #include <array>
 #include <compare>
@@ -318,7 +322,7 @@ std::string format_as_pyramid(const Puzzle::Balls& balls)
 
 int main()
 {
-    int num_solutions = 0;
+    std::size_t num_solutions = 0;
 
     Puzzle puzzle{[&](const auto& balls)
     {
