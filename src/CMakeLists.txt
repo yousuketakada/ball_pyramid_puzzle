@@ -1,7 +1,1 @@
-add_executable(puzzle)
-
-target_sources(
-    puzzle
-    PRIVATE
-        puzzle.cpp
-)
+add_executable(puzzle puzzle.cpp)
