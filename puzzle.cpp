@@ -1,14 +1,14 @@
 // 20-Ball Pyramid Puzzle Solver in C++20
+
+// Copyright (c) 2023 Yousuke Takada
+// SPDX-License-Identifier: MIT
+
+// Problem
+// -------
 //
-// TODO: Write some short description of the problem and
-// the strategy for solution that helps renders understand the code.
-// 
-// We shall fix the orientation of an asymmetric piece called 'L' and
-// try to place it only in the first set of parallel square lattice planes
-// so that solutions thus obtained are unique up to rotation and reflection.
-//
-// Solutions are shown in the layer-by-Layer view from bottom to top
-// (i.e., the horizontal parallel triangular lattice planes):
+// Suppose we have twenty balls of equal size and stack them up to make a pyramid.
+// The "pyramid" here is actually a tetrahedron, i.e., it has a triangular base
+// composed of ten balls such that their centers occupy a triangular lattice:
 //
 //         0                10
 //        / \                o            16
@@ -20,6 +20,45 @@
 //
 //       0-th               1st           2nd       3rd
 //      (Base)                                     (Top)
+//
+// The upper, first to third (top) layers again form triangular lattice planes
+// composed of six, three, and one ball(s), respectively.
+//
+// The problem we want to solve is how many ways we would have to make such a pyramid
+// if the balls were glued together with right angles into six polyomino-like pieces:
+//
+//                      o
+//                      |
+//   o                  o                 o
+//   |                  |                 |
+//   o      o--o--o     o       o         o        o
+//   |         |        |       |         |        |
+//   o--o      o        o       o--o      o        o
+//
+//   'L'      'T'      'I'      'v'      'i'      'd'
+//
+// Solution
+// --------
+//
+// At first, it might seem impossible to make a pyramid from such pieces with right angles.
+// To see why it is possible, notice that the pyramid arrangement is in fact the so-called
+// face-centered cubic or FCC, which is one of the densest ways to pack equal spheres.
+// As the name suggests, the FCC arrangement can also be obtained by stacking balls
+// layer-by-layer so that each layer forms a square lattice plane.
+//
+// TODO: Square lattice planes in the pyramid
+//
+//
+// TODO: Write some short description of the problem and
+// the strategy for solution that helps renders understand the code.
+//
+// We shall fix the orientation of an asymmetric piece called 'L' and
+// try to place it only in the first set of parallel square lattice planes
+// so that solutions thus obtained are unique up to rotation and reflection.
+//
+// Solutions are shown in the layer-by-Layer view from bottom to top
+// (i.e., the horizontal parallel triangular lattice planes):
+//
 
 #include <array>
 #include <compare>
