@@ -12,9 +12,9 @@
 //
 //         0                10
 //        / \                o            16
-//       1---2              / \            o
+//       1---2              / \            o        19
 //      / \ / \         11 o---o 12       / \        o
-//     3---4---5          / \ / \        o---o      19
+//     3---4---5          / \ / \        o---o
 //    / \ / \ / \        o---o---o      17  18
 //   6---7---8---9      13  14  15
 //
@@ -24,7 +24,7 @@
 // The upper, first to third (top) layers again form triangular lattice planes
 // composed of six, three, and one ball(s), respectively.
 //
-// The problem we want to solve is how many ways we would have to make such a pyramid
+// The problem we want to solve is how many ways we would have to make the pyramid
 // if the balls were glued together with right angles into six polyomino-like pieces:
 //
 //                      o
@@ -40,14 +40,23 @@
 // Solution
 // --------
 //
-// At first, it might seem impossible to make a pyramid from such pieces with right angles.
+// At first, it might seem impossible to make a triangular pyramid from right-angled pieces.
 // To see why it is possible, notice that the pyramid arrangement is in fact the so-called
-// face-centered cubic or FCC, which is one of the densest ways to pack equal spheres.
-// As the name suggests, the FCC arrangement can also be obtained by stacking balls
-// layer-by-layer so that each layer forms a square lattice plane.
+// face-centered cubic or FCC (which is one of the densest ways to pack equal spheres).
+// The FCC arrangement can also be obtained by stacking square lattice planes.
+// One can find such square lattice planes in the pyramid by sectioning it with planes
+// parallel to a pair of opposite edges, say, 0-1-3-6 and 9-15-18-19:
 //
-// TODO: Square lattice planes in the pyramid
+//   0 o
+//     |     2 o--o 10     5 12 16
+//   1 o       |  |        o--o--o     9 15 18 19
+//     |     4 o--o 11     |  |  |     o--o--o--o
+//   3 o       |  |        o--o--o
+//     |     7 o--o 13     8 14 17
+//   6 o
 //
+// Similarly, one can find two more sets of square lattice planes in the pyramid.
+// 
 //
 // TODO: Write some short description of the problem and
 // the strategy for solution that helps renders understand the code.
