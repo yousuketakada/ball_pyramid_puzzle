@@ -7,8 +7,9 @@
 // -------
 //
 // Suppose we have twenty balls of equal size and stack them up to make a pyramid.
-// The "pyramid" here is actually a tetrahedron, i.e., it has a triangular base
-// composed of ten balls such that their centers occupy a triangular lattice:
+// The "pyramid" here is actually a regular tetrahedron; its base is an equilateral triangle
+// composed of ten balls closely packed together such that their centers form a planer triangular
+// lattice:
 //
 //         0                10
 //        / \                o            16
@@ -21,8 +22,11 @@
 //       0-th               1st           2nd       3rd
 //      (Base)                                     (Top)
 //
-// The upper, first to third (top) layers again form triangular lattice planes
+// The upper, first to third (top), layers are again triangular lattice layers,
 // composed of six, three, and one ball(s), respectively.
+// (Note however that the above diagram does not represent the vertical shift correctly;
+// the actual shift is such that the ball numbered 19 in the top layer overlays the ball numbered 4
+// at the center of the base layer.)
 //
 // The problem we want to solve is how many ways we would have to make the pyramid
 // if the balls were glued together with right angles into six polyomino-like pieces:
@@ -41,11 +45,16 @@
 // --------
 //
 // At first, it might seem impossible to make a triangular pyramid from right-angled pieces.
-// To see why it is possible, notice that the pyramid arrangement is in fact the so-called
-// face-centered cubic or FCC (which is one of the densest ways to pack equal spheres).
-// The FCC arrangement can also be obtained by stacking square lattice planes.
-// One can find such square lattice planes in the pyramid by sectioning it with planes
-// parallel to a pair of opposite edges, say, 0-1-3-6 and 9-15-18-19:
+// To see why it is possible, notice that the pyramid is in fact part of the close sphere packing
+// called the face-centered cubic or FCC.
+// (To find an FCC in the pyramid, place three more balls in the second layer so that they touch
+// two of the three balls originally placed, then the ball numbered 4 in the base and the balls in
+// the above layers form an FCC; see also: https://mathworld.wolfram.com/CubicClosePacking.html)
+//
+// The FCC packing can also be obtained by stacking, as closely as possible, layers of spheres
+// such that their centers form a square lattice (instead of a triangular lattice).
+// We can find such square lattice layers in the pyramid by sectioning it with planes parallel to
+// a pair of opposite edges, say, 0-1-3-6 and 9-15-18-19:
 //
 //   0 o
 //     |     2 o--o 10     5 12 16
@@ -55,8 +64,10 @@
 //     |     7 o--o 13     8 14 17
 //   6 o
 //
-// Similarly, one can find two more sets of square lattice planes in the pyramid.
+// Similarly, one can find two more sets of square lattice layers in the pyramid:
+// TODO: write two more diagrams
 // 
+// TODO: plane -> layer
 //
 // TODO: Write some short description of the problem and
 // the strategy for solution that helps renders understand the code.
