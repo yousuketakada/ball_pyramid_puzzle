@@ -8,25 +8,24 @@
 //
 // Suppose we have twenty balls of equal size and stack them up to make a pyramid.
 // The "pyramid" here is actually a regular tetrahedron; its base is an equilateral triangle
-// composed of ten balls closely packed together such that their centers form a planer triangular
-// lattice:
+// composed of ten balls closely packed together such that their centers form a triangular lattice:
 //
-//         0                10
-//        / \                o            16
-//       1---2              / \            o        19
-//      / \ / \         11 o---o 12       / \        o
-//     3---4---5          / \ / \        o---o
-//    / \ / \ / \        o---o---o      17  18
-//   6---7---8---9      13  14  15
+//            0
+//           / \                    10
+//          /   \                    o
+//         1-----2                  / \              16
+//        / \   / \                /   \              o
+//       /   \ /   \           11 o-----o 12         / \        19
+//      3-----4-----5            / \   / \          /   \        o
+//     / \   / \   / \          /   \ /   \        o-----o
+//    /   \ /   \ /   \        o-----o-----o      17    18
+//   6-----7-----8-----9      13    14    15
 //
-//       0-th               1st           2nd       3rd
-//      (Base)                                     (Top)
+//          0-th                    1st              2nd        3rd
+//         (Base)                                              (Top)
 //
 // The upper, first to third (top), layers are again triangular lattice layers,
 // composed of six, three, and one ball(s), respectively.
-// (Note however that the above diagram does not represent the vertical shift correctly;
-// the actual shift is such that the ball numbered 19 in the top layer overlays the ball numbered 4
-// at the center of the base layer.)
 //
 // The problem we want to solve is how many ways we would have to make the pyramid
 // if the balls were glued together with right angles into six polyomino-like pieces:
@@ -115,6 +114,32 @@ public:
     explicit Puzzle(OnSolutionCallback on_solution_callback) :
         on_solution_callback{std::move(on_solution_callback)}
     {}
+
+    static std::string format_as_pyramid(const Balls& balls)
+    {
+        std::string str = R"(
+         (0)
+         / \
+        /   \                   (1)
+      (0)---(0)                 / \
+      / \   / \                /   \             (2)
+     /   \ /   \             (1)---(1)           / \
+   (0)---(0)---(0)           / \   / \          /   \       (3)
+   / \   / \   / \          /   \ /   \       (2)---(2)
+  /   \ /   \ /   \       (1)---(1)---(1)
+(0)---(0)---(0)---(0)
+)";
+
+        auto cur_ball = std::begin(balls);
+
+        for (const auto c : {'0', '1', '2', '3'}) {
+            for (std::size_t i = 0; (i = str.find(c, i)) != std::string::npos; ++i) {
+                str[i] = *cur_ball++;
+            }
+        }
+
+        return str;
+    }
 
     void solve()
     {
@@ -356,29 +381,6 @@ private:
     OnSolutionCallback on_solution_callback{};
 };
 
-std::string format_as_pyramid(const Puzzle::Balls& balls)
-{
-    std::string str = R"(
-      (0)
-      / \               (1)
-    (0)-(0)             / \           (2)
-    / \ / \           (1)-(1)         / \       (3)
-  (0)-(0)-(0)         / \ / \       (2)-(2)
-  / \ / \ / \       (1)-(1)-(1)
-(0)-(0)-(0)-(0)
-)";
-
-    auto cur_ball = std::begin(balls);
-
-    for (const auto c : {'0', '1', '2', '3'}) {
-        for (std::size_t i = 0; (i = str.find(c, i)) != std::string::npos; ++i) {
-            str[i] = *cur_ball++;
-        }
-    }
-
-    return str;
-}
-
 int main()
 {
     std::size_t num_solutions = 0;
@@ -386,7 +388,7 @@ int main()
     Puzzle puzzle{[&](const auto& balls)
     {
         std::cout << "Solution #" << num_solutions++ << ":\n"
-                  << format_as_pyramid(balls) << "\n";
+                  << Puzzle::format_as_pyramid(balls) << "\n";
     }};
 
     puzzle.solve();
