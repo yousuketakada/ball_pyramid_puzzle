@@ -52,7 +52,7 @@
 //
 // The FCC packing can also be obtained by stacking, as closely as possible, layers of spheres
 // such that their centers form a square lattice (instead of a triangular lattice).
-// We can find such square lattice layers in the pyramid by sectioning it with planes parallel to
+// We can find such square lattice layers in the pyramid by sectioning it with layers parallel to
 // a pair of opposite edges, say, 0-1-3-6 and 9-15-18-19:
 //
 //   0 o
@@ -66,17 +66,15 @@
 // Similarly, one can find two more sets of square lattice layers in the pyramid:
 // TODO: write two more diagrams
 // 
-// TODO: plane -> layer
-//
 // TODO: Write some short description of the problem and
 // the strategy for solution that helps renders understand the code.
 //
 // We shall fix the orientation of an asymmetric piece called 'L' and
-// try to place it only in the first set of parallel square lattice planes
+// try to place it only in the first set of parallel square lattice layers
 // so that solutions thus obtained are unique up to rotation and reflection.
 //
 // Solutions are shown in the layer-by-Layer view from bottom to top
-// (i.e., the horizontal parallel triangular lattice planes):
+// (i.e., the horizontal parallel triangular lattice layers):
 //
 
 #include <array>
@@ -252,10 +250,10 @@ private:
         },
     };
 
-    using Plane = std::map<Coord, std::size_t>;
+    using Layer = std::map<Coord, std::size_t>;
 
-    inline static const std::vector<std::vector<Plane>> planes_sets = {
-        // Square lattice planes parallel to 0-1-3-6 and 9-15-18-19
+    inline static const std::vector<std::vector<Layer>> layers_sets = {
+        // Square lattice layers parallel to 0-1-3-6 and 9-15-18-19
         {
             {
                 {{0, 0},  0},
@@ -276,7 +274,7 @@ private:
                 {{0, 0},  9}, {{0, 1}, 15}, {{0, 2}, 18}, {{0, 3}, 19},
             },
         },
-        // Square lattice planes parallel to 6-7-8-9 and 0-10-16-19
+        // Square lattice layers parallel to 6-7-8-9 and 0-10-16-19
         {
             {
                 {{0, 0},  6},
@@ -297,7 +295,7 @@ private:
                 {{0, 0},  0}, {{0, 1}, 10}, {{0, 2}, 16}, {{0, 3}, 19},
             },
         },
-        // Square lattice planes parallel to 0-2-5-9 and 6-13-17-19
+        // Square lattice layers parallel to 0-2-5-9 and 6-13-17-19
         {
             {
                 {{0, 0},  0},
@@ -328,16 +326,16 @@ private:
         }
 
         for (const auto& variant : cur_piece->variants) {
-            // We shall place 'L' only in the first set of parallel planes; see above.
+            // We shall place 'L' only in the first set of parallel layers; see above.
             const std::size_t num_views = (cur_piece->symbol == 'L') ? 1 : 3;
 
-            for (const auto& planes : planes_sets | std::views::take(num_views)) {
-                for (const auto& plane : planes) {
-                    for (const auto& pos : std::views::keys(plane)) {
-                        if (can_put(variant, plane, pos)) {
-                            put(cur_piece->symbol, variant, plane, pos);
+            for (const auto& layers : layers_sets | std::views::take(num_views)) {
+                for (const auto& layer : layers) {
+                    for (const auto& pos : std::views::keys(layer)) {
+                        if (can_put(variant, layer, pos)) {
+                            put(cur_piece->symbol, variant, layer, pos);
                             solve(cur_piece + 1);
-                            unput(variant, plane, pos);
+                            unput(variant, layer, pos);
                         }
                     }
                 }
@@ -345,12 +343,12 @@ private:
         }
     }
 
-    bool can_put(const Shape& shape, const Plane& plane, const Coord& pos) const
+    bool can_put(const Shape& shape, const Layer& layer, const Coord& pos) const
     {
         for (const auto& offset : shape) {
-            const auto it = plane.find(pos + offset);
+            const auto it = layer.find(pos + offset);
 
-            if (it == std::end(plane) || balls[it->second] != '\0') {
+            if (it == std::end(layer) || balls[it->second] != '\0') {
                 return false;
             }
         }
@@ -358,18 +356,18 @@ private:
         return true;
     }
 
-    void put(char symbol, const Shape& shape, const Plane& plane, const Coord& pos)
+    void put(char symbol, const Shape& shape, const Layer& layer, const Coord& pos)
     {
         for (const auto& offset : shape) {
-            const auto it = plane.find(pos + offset);
+            const auto it = layer.find(pos + offset);
 
             balls[it->second] = symbol;
         }
     }
 
-    void unput(const Shape& shape, const Plane& plane, const Coord& pos)
+    void unput(const Shape& shape, const Layer& layer, const Coord& pos)
     {
-        put('\0', shape, plane, pos);
+        put('\0', shape, layer, pos);
     }
 
     void on_solution() const
