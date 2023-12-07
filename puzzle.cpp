@@ -52,7 +52,7 @@
 //
 // The FCC packing can also be obtained by stacking, as closely as possible, layers of spheres
 // such that their centers form a square lattice (instead of a triangular lattice).
-// We can find such square lattice layers in the pyramid by sectioning it with layers parallel to
+// We can find such square lattice layers in the pyramid by sectioning it with planes parallel to
 // a pair of opposite edges, say, 0-1-3-6 and 9-15-18-19:
 //
 //   0 o
@@ -157,7 +157,7 @@ private:
         {
             .symbol = 'L',
             .variants = {
-                // We shall fix the orientation of 'L'; see above.
+                // We shall fix the orientation of 'L'.
                 {
                     { 0,  0},
                     { 1,  0},
@@ -326,7 +326,7 @@ private:
         }
 
         for (const auto& variant : cur_piece->variants) {
-            // We shall place 'L' only in the first set of parallel layers; see above.
+            // We shall place 'L' only in the first set of parallel layers.
             const std::size_t num_views = (cur_piece->symbol == 'L') ? 1 : 3;
 
             for (const auto& layers : layers_sets | std::views::take(num_views)) {
