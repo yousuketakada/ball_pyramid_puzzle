@@ -49,12 +49,13 @@ if the balls were glued together with right angles into six polyomino-like piece
 At first, it might seem impossible to make a triangular pyramid from right-angled pieces.
 To see why it is possible, notice that the pyramid is in fact part of the close sphere packing
 called the face-centered cubic or FCC.
-(To find an FCC unit cube in the pyramid, place three more balls in the second layer
+
+> To find an FCC unit cube in the pyramid, place three more balls in the second layer
 so that each of them touches two of the three existing balls.
 Then the ball numbered 4 in the base and the balls in the above layers form the unit cube;
 the six balls numbered 11, 12, 14, 16, 17, and 18 lie at the centers of the faces and
 the other eight balls at the vertices.
-See also: https://mathworld.wolfram.com/CubicClosePacking.html)
+See also: https://mathworld.wolfram.com/CubicClosePacking.html
 
 The FCC packing can also be obtained by stacking, as closely as possible, layers of spheres
 such that their centers form a square lattice (instead of a triangular lattice).
