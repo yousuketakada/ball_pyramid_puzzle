@@ -71,20 +71,60 @@ a pair of opposite edges, say, 0-1-3-6 and 9-15-18-19:
  6 o
 ```
 
+Similarly, we can find two more sets of parallel square lattice layers in the pyramid, i.e.,
+a set of square lattice layers parallel to 6-7-8-9 and 0-10-16-19:
 
-Similarly, one can find two more sets of square lattice layers in the pyramid:
+```
+ 6 o
+   |     3 o--o 13     1 11 17
+ 7 o       |  |        o--o--o     0 10 16 19
+   |     4 o--o 14     |  |  |     o--o--o--o
+ 8 o       |  |        o--o--o
+   |     5 o--o 15     2 12 18
+ 9 o
+```
 
-TODO: write two more diagrams
+and a set of square lattice layers parallel to 0-2-5-9 and 6-13-17-19:
 
-TODO: Write some short description of the problem and
-the strategy for solution that helps renders understand the code.
+```
+ 0 o
+   |    10 o--o 1      3 11 16
+ 2 o       |  |        o--o--o     6 13 17 19
+   |    12 o--o 4      |  |  |     o--o--o--o
+ 5 o       |  |        o--o--o
+   |    15 o--o 8      7 14 18
+ 9 o
+```
 
-We shall fix the orientation of an asymmetric piece called 'L' and
-try to place it only in the first set of parallel square lattice layers
+Now that we have got those square lattice layers in which we can place the polyomino-like pieces,
+it is not particularly difficult to solve the puzzle by hand.
+Rather than writing a description of the solution in words,
+I have written a [program](./puzzle.cpp) for it,
+which will print all the solution configurations formatted as a pyramid.
+For instance, the first solution found is given by
+
+```
+         (i)
+         / \
+        /   \                   (i)
+      (T)---(L)                 / \
+      / \   / \                /   \             (i)
+     /   \ /   \             (T)---(T)           / \
+   (d)---(L)---(v)           / \   / \          /   \       (I)
+   / \   / \   / \          /   \ /   \       (T)---(I)
+  /   \ /   \ /   \       (L)---(v)---(I)
+(d)---(L)---(v)---(I)
+```
+
+where I have fixed the orientation of an asymmetric piece called `L` and
+tried to place it only in the first set of parallel square lattice layers
+(i.e., those parallel to 0-1-3-6 and 9-15-18-19)
 so that solutions thus obtained are unique up to rotation and reflection.
 
-Solutions are shown in the layer-by-Layer view from bottom to top
-(i.e., the horizontal parallel triangular lattice layers):
+Since the two straight pieces `I` and `i` form two adjacent edges of the pyramid
+(sharing the top ball),
+it is trivial to obtain another solution by exchanging those two pieces.
+It turns out that there is no other solution, however.
 
 ## Note on references
 
