@@ -171,4 +171,18 @@ See how to assemble the pyramid shown above step by step.
 
 ## Note on references
 
-TODO
+I first came across this puzzle in a column
+of a now discontinued Japanese programming magazine entitled _C Magazine_,
+published around 2000,
+on which, unfortunately, I cannot give a precise citation.
+I was so fascinated by the puzzle that I created my own
+(some pictures of which are shown above)
+and have kept it to this day.
+The author of the column said, if I remember correctly, that
+they bought a (physical) copy of the puzzle in the US.
+Some years ago, I happened to find the same puzzle dubbed
+["perplexing pyramid"](http://www.robspuzzlepage.com/assembly.htm#gordonsolns)
+at a web museum of mechanical puzzles entitled
+[Rob's Puzzle Page](http://www.robspuzzlepage.com/).
+I believe the author of the column I enjoyed must have been happy to buy
+the puzzle with this nicely alliterated name.
