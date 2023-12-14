@@ -40,6 +40,19 @@ if the balls were glued together with right angles into six polyomino-like piece
  'L'      'T'      'I'      'v'      'i'      'd'
 ```
 
+<details>
+
+<summary>
+See some pictures of the six pieces made of wooden balls and
+the pyramid assembled from those pieces.
+</summary>
+
+![disassembled](./fig/disassembled.jpg)
+
+![assembled](./fig/assembled.jpg)
+
+</details>
+
 ## How to solve it
 
 At first, it might seem impossible to make a triangular pyramid from right-angled pieces.
@@ -123,6 +136,38 @@ Since the two straight pieces `I` and `i` form two adjacent edges of the pyramid
 (sharing the top ball),
 it is trivial to obtain another configuration by exchanging those two pieces.
 It is going to turn out however that there is no more possible configuration.
+
+<details>
+
+<summary>
+See how to assemble the pyramid shown above step by step.
+</summary>
+
+1. Place `d` in the base. (Note that the base is rotated by 180 degrees.)
+
+   ![step 1](./fig/step_1.jpg)
+
+2. Place `L` so as to lean on `d`.
+
+   ![step 2](./fig/step_2.jpg)
+
+3. Place `v` so as to lean on `L`.
+
+   ![step 3](./fig/step_3.jpg)
+
+4. Place `T` so as to lean on all the pieces previously placed.
+
+   ![step 4](./fig/step_4.jpg)
+
+5. Place `i` so as to lean on `L` and `T`.
+
+   ![step 5](./fig/step_5.jpg)
+
+6. Place `I` where it fits!
+
+   ![step 6](./fig/step_6.jpg)
+
+</details>
 
 ## Note on references
 
