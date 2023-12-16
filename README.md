@@ -178,15 +178,15 @@ See how to assemble the pyramid shown above step by step.
 
 ## Note on references
 
-I first came across this puzzle in a column
-of a now discontinued Japanese programming magazine entitled _C Magazine_,
-published around 2000,
-on which, unfortunately, I cannot give a precise citation.
-I was so fascinated by the puzzle that I created my own
-(some pictures of which are shown above)
+I first came across this puzzle in a column of a now discontinued Japanese programming magazine
+entitled _C MAGAZINE_.
+The column that introduced the puzzle was published around 2000;
+unfortunately, I no longer have access to it and cannot give a precise citation on it.
+Although I, to be honest, was not able to solve the puzzle at first,
+I was so fascinated by it that I created my own (some pictures of which are shown above)
 and have kept it to this day.
-The author of the column said, if I remember correctly, that
-they bought a (physical) copy of the puzzle in the US.
+In the column, the author said, if I remember correctly, that
+they had bought a copy of the puzzle in the US.
 Some years ago, I happened to find the same puzzle dubbed
 ["perplexing pyramid"](http://www.robspuzzlepage.com/assembly.htm#gordonsolns)
 at a web museum of mechanical puzzles entitled
