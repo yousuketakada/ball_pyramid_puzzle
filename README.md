@@ -115,7 +115,8 @@ it is not particularly difficult to solve the puzzle by hand.
 Rather than explaining how to solve it in words,
 I have written a [computer program](./puzzle.cpp) solving it that I hope is self-explanatory.
 
-My solver program will print all the possible configurations.
+My solver program will print all the solutions (possible configurations that are unique)
+formatted as a pyramid.
 For instance, the first one found is given by
 
 ```
@@ -138,8 +139,8 @@ so that configurations thus obtained are unique up to rotation and reflection.
 
 Since the two straight pieces `I` and `i` form two adjacent edges of the pyramid
 (sharing the top ball),
-it is trivial to obtain another configuration by exchanging those two pieces.
-It is going to turn out however that there is no more possible configuration.
+it is trivial to obtain another solution by exchanging those two pieces.
+It is going to turn out however that there is no more solution.
 
 <details>
 
