@@ -148,7 +148,9 @@ It is going to turn out however that there is no more solution.
 See how to assemble the pyramid shown above step by step.
 </summary>
 
-1. Place `d` in the base. (Note that the base is rotated by 180 degrees.)
+1. Place `d` in a corner of the base.
+   (Note that the base is rotated by 180 degrees compared to the above diagram;
+   when taking the picture with a webcam, I was sitting on the opposite side.)
 
    ![step 1](./fig/step_1.jpg)
 
@@ -156,11 +158,11 @@ See how to assemble the pyramid shown above step by step.
 
    ![step 2](./fig/step_2.jpg)
 
-3. Place `v` so as to lean on `L`.
+3. Place `v` so as to lean on `L` but not to touch `d`.
 
    ![step 3](./fig/step_3.jpg)
 
-4. Place `T` so as to lean on all the pieces previously placed.
+4. Place `T` so as to lean on all the pieces placed so far.
 
    ![step 4](./fig/step_4.jpg)
 
