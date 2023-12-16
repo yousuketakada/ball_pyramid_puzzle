@@ -149,8 +149,7 @@ See how to assemble the pyramid shown above step by step.
 </summary>
 
 1. Place `d` in a corner of the base.
-   (Note that the base is rotated by 180 degrees compared to the above diagram;
-   when taking the picture with a webcam, I was sitting on the opposite side.)
+   (Note that the base is rotated by 180 degrees from the above diagram.)
 
    ![step 1](./fig/step_1.jpg)
 
