@@ -146,7 +146,8 @@ It is going to turn out however that there is no more solution.
 <details>
 
 <summary>
-See how to assemble the six pieces, step by step, into the pyramid shown above.
+See how to assemble the six pieces, step by step,
+into the pyramid whose configuration is shown above.
 </summary>
 
 1. Place `d` in a corner of the base.
