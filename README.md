@@ -61,7 +61,8 @@ the pyramid assembled from those pieces.
 
 At first, it might seem impossible to make a triangular pyramid from right-angled pieces.
 To see why it is possible, notice that the pyramid is part of the close sphere packing
-called the _face-centered cubic_ or FCC.
+called the [_face-centered cubic_](https://en.wikipedia.org/wiki/Close-packing_of_equal_spheres)
+or FCC.
 
 > To find the _unit cube_ in the pyramid, place three more balls in the second layer
 > so that each of them touches two of the three existing balls.
