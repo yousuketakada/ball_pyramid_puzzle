@@ -25,8 +25,9 @@ composed of ten balls closely packed together such that their centers form a tri
 The upper, first to third (top), layers are again triangular lattice layers,
 composed of six, three, and one ball(s), respectively.
 
-The problem we want to solve is _how many ways we would have to make the pyramid
-if the balls were glued together with right angles into six polyomino-like pieces_:
+Now the problem we want to solve is _how to make the pyramid
+if the balls were glued together with right angles
+into six [polyomino](https://en.wikipedia.org/wiki/Polyomino)-like pieces as follows:_
 
 ```
                     o
@@ -39,6 +40,9 @@ if the balls were glued together with right angles into six polyomino-like piece
 
  'L'      'T'      'I'      'v'      'i'      'd'
 ```
+
+And, if it is possible to make the pyramid (in fact it is),
+we also want to know _how many unique ways there are to make the pyramid_.
 
 <details>
 
