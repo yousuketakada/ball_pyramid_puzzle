@@ -182,9 +182,7 @@ I first came across this puzzle in a column of a now discontinued Japanese progr
 entitled _C MAGAZINE_.
 The column that introduced the puzzle was published around 2000;
 unfortunately, I no longer have access to it and cannot give a precise citation on it.
-Although I, to be honest, was not able to solve the puzzle at first,
-I was so fascinated by it that I created my own (some pictures of which are shown above)
-and have kept it to this day.
+
 In the column, the author said, if I remember correctly, that
 they had bought a copy of the puzzle in the US.
 Some years ago, I happened to find the same puzzle dubbed
@@ -193,3 +191,7 @@ at a web museum of mechanical puzzles entitled
 [Rob's Puzzle Page](http://www.robspuzzlepage.com/).
 I believe the author of the column I enjoyed must have been happy to buy
 the puzzle with this nicely alliterated name.
+
+To be honest, I was not able to solve the puzzle at first,
+but I was so fascinated by it that I created my own (some pictures of which are shown above)
+and have kept it to this day.
