@@ -188,7 +188,7 @@ and have kept it to this day.
 In the column, the author said, if I remember correctly, that
 they had bought a copy of the puzzle in the US.
 Some years ago, I happened to find the same puzzle dubbed
-["perplexing pyramid"](http://www.robspuzzlepage.com/assembly.htm#gordonsolns)
+[Perplexing Pyramid](http://www.robspuzzlepage.com/assembly.htm#gordonsolns)
 at a web museum of mechanical puzzles entitled
 [Rob's Puzzle Page](http://www.robspuzzlepage.com/).
 I believe the author of the column I enjoyed must have been happy to buy
