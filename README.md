@@ -3,7 +3,9 @@
 ## The problem
 
 Suppose we have twenty balls of equal size and stack them up to make a pyramid.
-The "pyramid" here is actually a regular tetrahedron; its base is an equilateral triangle
+The "pyramid" here is actually a
+[regular tetrahedron](https://en.wikipedia.org/wiki/Tetrahedron);
+its base is an equilateral triangle
 composed of ten balls closely packed together such that their centers form a triangular lattice:
 
 ```
