@@ -195,6 +195,7 @@ at a web museum of mechanical puzzles entitled
 I believe the author of the column I enjoyed must have been happy to buy
 the puzzle with this nicely alliterated name.
 
-To be honest, I was not able to solve the puzzle at first,
-but I was so fascinated by it that I created my own (some pictures of which are shown above)
-and have kept it to this day.
+The pictures of the puzzle shown above (in the collapsable sections) are
+those of the one I have handcrafted (not purchased).
+When I first tried the puzzle, I was, to be honest, not able to solve it,
+but I was so fascinated by it that I created my own and have kept it to this day.
