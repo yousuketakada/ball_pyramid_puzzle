@@ -47,7 +47,6 @@ And, if it is possible to make the pyramid (in fact it is),
 we also want to know _how many unique ways there are to make the pyramid_.
 
 <details>
-
 <summary>
 See some pictures of the six pieces made of wooden balls and
 the pyramid assembled from those pieces.
@@ -146,7 +145,6 @@ it is trivial to obtain another solution by exchanging those two pieces.
 It is going to turn out however that there is no more solution.
 
 <details>
-
 <summary>
 See how to assemble the six pieces, step by step,
 into the pyramid whose configuration is shown above.
