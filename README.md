@@ -71,7 +71,7 @@ or FCC.
 > Then the ball numbered 4 in the base and the balls in the above layers form the unit cube;
 > the six balls numbered 11, 12, 14, 16, 17, and 18 lie at the centers of its faces and
 > the other eight balls at its vertices, hence the name FCC.
-> See also: https://mathworld.wolfram.com/CubicClosePacking.html
+> See also: <https://mathworld.wolfram.com/CubicClosePacking.html>
 
 The FCC arrangement can also be obtained by stacking, as closely as possible, layers of spheres
 such that their centers form a square lattice (instead of a triangular lattice).
