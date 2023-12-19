@@ -47,7 +47,6 @@ And, if it is possible to make the pyramid (in fact it is),
 we also want to know _how many unique ways there are to make the pyramid_.
 
 <details>
-
 <summary>
 See some pictures of the six pieces made of wooden balls and
 the pyramid assembled from those pieces.
@@ -71,7 +70,7 @@ or FCC.
 > Then the ball numbered 4 in the base and the balls in the above layers form the unit cube;
 > the six balls numbered 11, 12, 14, 16, 17, and 18 lie at the centers of its faces and
 > the other eight balls at its vertices, hence the name FCC.
-> See also: https://mathworld.wolfram.com/CubicClosePacking.html
+> See also: <https://mathworld.wolfram.com/CubicClosePacking.html>
 
 The FCC arrangement can also be obtained by stacking, as closely as possible, layers of spheres
 such that their centers form a square lattice (instead of a triangular lattice).
@@ -146,7 +145,6 @@ it is trivial to obtain another solution by exchanging those two pieces.
 It is going to turn out however that there is no more solution.
 
 <details>
-
 <summary>
 See how to assemble the six pieces, step by step,
 into the pyramid whose configuration is shown above.
